@@ -1,0 +1,1 @@
+The trained MobileNetV3 Small checkpoint is not present in this reconstruction workspace. Run the documented training command to create models/mobilenet_v3_small_tomato.pt. Checkpoints are excluded from Git.

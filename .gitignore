@@ -1,0 +1,11 @@
+__pycache__/
+.venv/
+node_modules/
+frontend/dist/
+data/plantvillage/
+data/sensor_monitoring.sqlite3
+data/manifests/*.csv
+data/manifests/preparation_report.json
+models/*.pt
+results/
+.env

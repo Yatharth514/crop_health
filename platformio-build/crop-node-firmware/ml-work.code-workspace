@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "../../.."
+		},
+		{
+			"name": "crop-node-firmware",
+			"path": "."
+		}
+	],
+	"settings": {}
+}

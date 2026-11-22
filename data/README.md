@@ -1,0 +1,1 @@
+PlantVillage source: Hugging Face dataset mohanty/PlantVillage, default configuration. The builder exposes path strings in the text field, not decoded images or leaf IDs. Preparation materializes only the three requested tomato color classes and writes reproducible train, validation, and official test CSV manifests.

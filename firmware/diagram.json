@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "author": "YATHARTH CHAUDHARY",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-breadboard-half", "id": "bb1", "top": 35.4, "left": 156.4, "attrs": {} },
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 38.4, "left": 14.44, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -114.9, "left": 186.6, "attrs": {} },
+    { "type": "wokwi-potentiometer", "id": "pot1", "top": 257.9, "left": 211, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 6.4,
+      "left": 533.6,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 116.8,
+      "left": 359.4,
+      "rotate": 180,
+      "attrs": { "color": "red" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 81.6,
+      "left": 354.65,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:3V3", "bb1:tp.1", "red", [ "h0.15", "v-38.4", "h172.8" ] ],
+    [ "esp:GND.2", "bb1:tn.1", "black", [ "v0" ] ],
+    [ "dht1:VCC", "bb1:tp.2", "red", [ "v0" ] ],
+    [ "esp:15", "bb1:4t.a", "green", [ "v0", "h38.4", "v-134.4", "h57.6" ] ],
+    [ "dht1:SDA", "bb1:4t.b", "green", [ "v0" ] ],
+    [ "dht1:GND", "bb1:tn.5", "black", [ "v0" ] ],
+    [ "bb1:tp.25", "bb1:bp.25", "red", [ "v0.3", "h11.2", "v172.8" ] ],
+    [ "bb1:tn.25", "bb1:bn.25", "black", [ "v-0.1", "h20.8", "v172.8" ] ],
+    [ "pot1:GND", "bb1:bn.1", "black", [ "v19.2", "h-67.2" ] ],
+    [ "pot1:VCC", "bb1:bp.10", "red", [ "v19.2", "h37.6" ] ],
+    [ "esp:34", "bb1:1b.f", "green", [ "h-19.05", "v182.4", "h172.8", "v-134.4" ] ],
+    [ "pot1:SIG", "bb1:1b.j", "green", [ "v38.4", "h-67.6", "v-48" ] ],
+    [ "lcd1:GND", "bb1:tn.24", "black", [ "h0" ] ],
+    [ "lcd1:VCC", "bb1:tp.24", "red", [ "h0" ] ],
+    [ "lcd1:SDA", "bb1:29t.a", "green", [ "h-28.8", "v19.4" ] ],
+    [ "esp:21", "bb1:29t.b", "green", [ "h19.2", "v-115.2", "h316.8", "v19.2" ] ],
+    [ "lcd1:SCL", "bb1:28t.a", "green", [ "h-96", "v0.3" ] ],
+    [ "esp:22", "bb1:28t.b", "green", [ "h0" ] ],
+    [ "r1:1", "bb1:tn.18", "", [ "$bb" ] ],
+    [ "r1:2", "bb1:22t.d", "", [ "$bb" ] ],
+    [ "led1:A", "bb1:21t.e", "", [ "$bb" ] ],
+    [ "led1:C", "bb1:22t.e", "", [ "$bb" ] ],
+    [ "esp:2", "bb1:21t.d", "green", [ "h19.2", "v-67.2" ] ]
+  ],
+  "dependencies": {}
+}
